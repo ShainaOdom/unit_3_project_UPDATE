@@ -66,18 +66,17 @@ jobRole.addEventListener('change', (e) => {
   const creditCard = document.querySelector('#credit-card');
   const paypal = document.querySelector('#paypal');
   const bitcoin = document.querySelector('#bitcoin');
-
+//initially hide paypal and bitcoin variables
   paypal.style.display = 'none';
   bitcoin.style.display = 'none';
-
+//set the second child element and set the selected property
   paymentType.children[1].setAttribute('selected', 'selected');
-
+//event listener detects when a change is made and displays the div element with the matches and hides the other 2.
   paymentType.addEventListener('change', (e) => {
       if (e.target.value === 'paypal') {
             paypal.style.display = 'block';
             bitcoin.style.display = 'none';
             creditCard.style.display = 'none';
-
       } else if
           (e.target.value === 'bitcoin') {
               bitcoin.style.display = 'block';
