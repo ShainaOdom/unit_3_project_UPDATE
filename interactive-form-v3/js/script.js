@@ -61,3 +61,31 @@ jobRole.addEventListener('change', (e) => {
         );
       activitiesCost.innerHTML = 'Total: $' +totalCost;
   });
+//variables to reference paymentType, credit card, paypal, bitcoin
+  const paymentType = document.querySelector('#payment');
+  const creditCard = document.querySelector('#credit-card');
+  const paypal = document.querySelector('#paypal');
+  const bitcoin = document.querySelector('#bitcoin');
+
+  paypal.style.display = 'none';
+  bitcoin.style.display = 'none';
+
+  paymentType.children[1].setAttribute('selected', 'selected');
+
+  paymentType.addEventListener('change', (e) => {
+      if (e.target.value === 'paypal') {
+            paypal.style.display = 'block';
+            bitcoin.style.display = 'none';
+            creditCard.style.display = 'none';
+
+      } else if
+          (e.target.value === 'bitcoin') {
+              bitcoin.style.display = 'block';
+              paypal.style.display = 'none';
+              creditCard.style.display = 'none';
+      } else {
+              creditCard.style.display = 'block';
+              paypal.style.display = 'none';
+              bitcoin.style.display = 'none';
+      }
+  });
