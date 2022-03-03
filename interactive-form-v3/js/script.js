@@ -233,6 +233,19 @@ if (!cvvValidation()) {
   cvv.parentElement.classList.remove('not-valid');
   cvv.parentElement.lastElementChild.style.display = 'none';
 }
-
-
 });
+
+
+//as each input field is clicked, it has a visual focus
+const activitiesCheckboxes = document.querySelectorAll("input[type='checkbox']"); //https://stackoverflow.com/questions/28667741/checkbox-select-using-queryselectorall-is-not-working/28667925
+//console.log(activitiesCheckboxes)
+
+
+for (let i=0; i < activitiesCheckboxes.length; i++) {
+    activitiesCheckboxes[i].addEventListener('focus', event => {
+        event.target.parentElement.classList.add('focus');
+    });
+    activitiesCheckboxes[i].addEventListener('blur', event => {
+        event.target.parentElement.classList.remove('focus');
+    });
+}
