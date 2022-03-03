@@ -164,7 +164,7 @@ for name,email,activities,card number, zipcode, and cvv.
 if enterd value is valid, the page is refreshed
 if entered value is not valid, the page displays a validation error message*/
 form.addEventListener('submit', event => {
-event.preventDefault();
+//event.preventDefault();
 
 if (!nameValidation()) {
     event.preventDefault();
