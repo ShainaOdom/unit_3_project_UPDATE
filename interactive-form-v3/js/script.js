@@ -164,7 +164,7 @@ for name,email,activities,card number, zipcode, and cvv.
 if enterd value is valid, the page is refreshed
 if entered value is not valid, the page displays a validation error message*/
 form.addEventListener('submit', event => {
-//event.preventDefault();
+//event.preventDefault(); (when enabled, prevents page from refreshing when valid)
 
 if (!nameValidation()) {
     event.preventDefault();
@@ -239,7 +239,6 @@ if (!cvvValidation()) {
 //as each input field is clicked, it has a visual focus
 const activitiesCheckboxes = document.querySelectorAll("input[type='checkbox']"); //https://stackoverflow.com/questions/28667741/checkbox-select-using-queryselectorall-is-not-working/28667925
 //console.log(activitiesCheckboxes)
-
 
 for (let i=0; i < activitiesCheckboxes.length; i++) {
     activitiesCheckboxes[i].addEventListener('focus', event => {
